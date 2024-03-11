@@ -1,3 +1,10 @@
+gooroom-security-status-tools (4.0.0+grm4u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [e0617321] Rebuild on gooroom-4.0
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Mon, 11 Mar 2024 19:57:49 +0900
+
 gooroom-security-status-tools (0.3.9+grm3u1) unstable; urgency=medium
 
   [ boyeon.choi ]

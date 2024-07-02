@@ -10,4 +10,4 @@ Identity=unix-group:sudo;unix-group:gpms
 Action=kr.gooroom.security.status.tools.iptables-wrapper;kr.gooroom.security.status.tools.ip6tables-wrapper;
 ResultActive=yes
 ResultInactive=no
-ResultAnt=no
+ResultAny=no

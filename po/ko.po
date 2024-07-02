@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gooroom-security-status-tools 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-19 15:17+0900\n"
+"POT-Creation-Date: 2024-07-02 16:56+0900\n"
 "PO-Revision-Date: 2019-08-23 11:54+0900\n"
 "Language-Team: Gooroom <gooroom@gooroom.kr>\n"
 "Language: ko\n"
@@ -20,216 +20,216 @@ msgstr ""
 #. gtk_label_set_text (GTK_LABEL(priv->lbl_security_files), _("Allow"));
 #. gtk_label_set_text (GTK_LABEL(priv->lbl_security_booting), _("Allow"));
 #. gtk_label_set_text (GTK_LABEL(priv->lbl_security_rsc), _("Allow"));
-#: ../src/sysinfo-window.c:460 ../src/sysinfo-window.c:656
-#: ../src/sysinfo-window.c:760 ../src/sysinfo-window.c:842
-#: ../src/sysinfo-window.c:1735 ../src/sysinfo-window.c:1744
-#: ../src/sysinfo-window.c:1753 ../src/sysinfo-window.c:1762
-#: ../src/sysinfo-window.c:1958 ../src/sysinfo-window.c:2392
-#: ../src/sysinfo-window.c:2519 ../src/sysinfo-window.c:2617
-#: ../src/sysinfo-window.c:2652 ../src/sysinfo-window.c:2692
-#: ../src/sysinfo-window.c:2706 ../src/sysinfo-window.c:2801
-#: ../src/sysinfo-window.c:2914 ../src/rpd-dialog.c:212
+#: ../src/sysinfo-window.c:479 ../src/sysinfo-window.c:675
+#: ../src/sysinfo-window.c:779 ../src/sysinfo-window.c:861
+#: ../src/sysinfo-window.c:1761 ../src/sysinfo-window.c:1770
+#: ../src/sysinfo-window.c:1779 ../src/sysinfo-window.c:1788
+#: ../src/sysinfo-window.c:1984 ../src/sysinfo-window.c:2424
+#: ../src/sysinfo-window.c:2560 ../src/sysinfo-window.c:2674
+#: ../src/sysinfo-window.c:2709 ../src/sysinfo-window.c:2749
+#: ../src/sysinfo-window.c:2763 ../src/sysinfo-window.c:2859
+#: ../src/sysinfo-window.c:2972 ../src/rpd-dialog.c:212
 msgid "Allow"
 msgstr "허용"
 
-#: ../src/sysinfo-window.c:475 ../src/sysinfo-window.c:658
-#: ../src/sysinfo-window.c:765 ../src/sysinfo-window.c:844
-#: ../src/sysinfo-window.c:1739 ../src/sysinfo-window.c:1748
-#: ../src/sysinfo-window.c:1757 ../src/sysinfo-window.c:1766
-#: ../src/sysinfo-window.c:1960 ../src/sysinfo-window.c:2416
-#: ../src/sysinfo-window.c:2426 ../src/sysinfo-window.c:2436
-#: ../src/sysinfo-window.c:2446 ../src/sysinfo-window.c:2526
-#: ../src/sysinfo-window.c:2538 ../src/sysinfo-window.c:2581
-#: ../src/sysinfo-window.c:2655 ../src/sysinfo-window.c:2795
-#: ../src/sysinfo-window.c:2918
+#: ../src/sysinfo-window.c:494 ../src/sysinfo-window.c:677
+#: ../src/sysinfo-window.c:784 ../src/sysinfo-window.c:863
+#: ../src/sysinfo-window.c:1765 ../src/sysinfo-window.c:1774
+#: ../src/sysinfo-window.c:1783 ../src/sysinfo-window.c:1792
+#: ../src/sysinfo-window.c:1986 ../src/sysinfo-window.c:2448
+#: ../src/sysinfo-window.c:2458 ../src/sysinfo-window.c:2468
+#: ../src/sysinfo-window.c:2478 ../src/sysinfo-window.c:2567
+#: ../src/sysinfo-window.c:2579 ../src/sysinfo-window.c:2622
+#: ../src/sysinfo-window.c:2712 ../src/sysinfo-window.c:2853
+#: ../src/sysinfo-window.c:2976
 msgid "Disallow"
 msgstr "허용안함"
 
-#: ../src/sysinfo-window.c:489 ../src/sysinfo-window.c:2309
+#: ../src/sysinfo-window.c:508 ../src/sysinfo-window.c:2335
 msgid "unset"
 msgstr "설정되지 않음"
 
-#: ../src/sysinfo-window.c:492
+#: ../src/sysinfo-window.c:511
 msgid "immediately"
 msgstr "즉시"
 
-#: ../src/sysinfo-window.c:494
+#: ../src/sysinfo-window.c:513
 msgid "day"
 msgstr "일"
 
-#: ../src/sysinfo-window.c:496
+#: ../src/sysinfo-window.c:515
 msgid "days"
 msgstr "일"
 
-#: ../src/sysinfo-window.c:651
+#: ../src/sysinfo-window.c:670
 msgid "Service was started successfully"
 msgstr "서비스를 시작하였습니다."
 
-#: ../src/sysinfo-window.c:651
+#: ../src/sysinfo-window.c:670
 msgid "Service was stopped successfully"
 msgstr "서비스를 중지하였습니다."
 
-#: ../src/sysinfo-window.c:652 ../src/sysinfo-window.c:805
-#: ../src/sysinfo-window.c:808 ../src/sysinfo-window.c:811
-#: ../src/sysinfo-window.c:814 ../src/sysinfo-window.c:817
-#: ../src/sysinfo-window.c:820 ../src/sysinfo-window.c:839
-#: ../src/sysinfo-window.c:1004 ../src/sysinfo-window.c:1024
-#: ../src/sysinfo-window.c:1142 ../src/sysinfo-window.c:1253
-#: ../src/sysinfo-window.c:1792 ../src/sysinfo-window.c:1924
-#: ../src/sysinfo-window.c:1986 ../src/sysinfo-window.c:2026
-#: ../src/sysinfo-window.c:2099 ../src/sysinfo-window.c:2147
-#: ../src/sysinfo-window.c:2148 ../src/sysinfo-window.c:2149
-#: ../src/sysinfo-window.c:2163 ../src/sysinfo-window.c:2327
-#: ../src/sysinfo-window.c:2530 ../src/sysinfo-window.c:2542
-#: ../src/sysinfo-window.c:2583 ../src/sysinfo-window.c:2657
-#: ../src/sysinfo-window.c:3433 ../src/sysinfo-window.c:3434
+#: ../src/sysinfo-window.c:671 ../src/sysinfo-window.c:824
+#: ../src/sysinfo-window.c:827 ../src/sysinfo-window.c:830
+#: ../src/sysinfo-window.c:833 ../src/sysinfo-window.c:836
+#: ../src/sysinfo-window.c:839 ../src/sysinfo-window.c:858
+#: ../src/sysinfo-window.c:1030 ../src/sysinfo-window.c:1050
+#: ../src/sysinfo-window.c:1168 ../src/sysinfo-window.c:1279
+#: ../src/sysinfo-window.c:1818 ../src/sysinfo-window.c:1950
+#: ../src/sysinfo-window.c:2012 ../src/sysinfo-window.c:2052
+#: ../src/sysinfo-window.c:2125 ../src/sysinfo-window.c:2173
+#: ../src/sysinfo-window.c:2174 ../src/sysinfo-window.c:2175
+#: ../src/sysinfo-window.c:2189 ../src/sysinfo-window.c:2359
+#: ../src/sysinfo-window.c:2571 ../src/sysinfo-window.c:2583
+#: ../src/sysinfo-window.c:2624 ../src/sysinfo-window.c:2714
+#: ../src/sysinfo-window.c:3492 ../src/sysinfo-window.c:3493
 #: ../src/sysinfo-window.ui.h:7
 msgid "Unknown"
 msgstr "알수없음"
 
-#: ../src/sysinfo-window.c:670
+#: ../src/sysinfo-window.c:689
 msgid "Notifications"
 msgstr "알림"
 
-#: ../src/sysinfo-window.c:894
+#: ../src/sysinfo-window.c:913
 msgid "Program is not installed"
 msgstr "프로그램이 설치 되지 않았습니다."
 
-#: ../src/sysinfo-window.c:897
+#: ../src/sysinfo-window.c:916
 msgid "Please install the gooroom-client-server-register."
 msgstr "gooroom-client-server-register 프로그램을 설치하십시오."
 
-#: ../src/sysinfo-window.c:990
-msgid "Connected"
-msgstr "연결됨"
-
-#: ../src/sysinfo-window.c:992
+#: ../src/sysinfo-window.c:991 ../src/sysinfo-window.c:1018
 msgid "Disconnected"
 msgstr "연결끊김"
 
-#: ../src/sysinfo-window.c:1255
+#: ../src/sysinfo-window.c:1016
+msgid "Connected"
+msgstr "연결됨"
+
+#: ../src/sysinfo-window.c:1281
 msgid "Latest"
 msgstr "최신 상태"
 
-#: ../src/sysinfo-window.c:1259
+#: ../src/sysinfo-window.c:1285
 #, c-format
 msgid "There is %s package to update."
 msgstr "%s 개의 업데이트 패키지가 존재합니다."
 
-#: ../src/sysinfo-window.c:1261
+#: ../src/sysinfo-window.c:1287
 #, c-format
 msgid "There are %s packages to update."
 msgstr "%s 개의 업데이트 패키지가 존재합니다."
 
-#: ../src/sysinfo-window.c:1358
+#: ../src/sysinfo-window.c:1384
 msgid "ACCEPT"
 msgstr "허용"
 
-#: ../src/sysinfo-window.c:1360
+#: ../src/sysinfo-window.c:1386
 msgid "DROP"
 msgstr "차단"
 
-#: ../src/sysinfo-window.c:1362
+#: ../src/sysinfo-window.c:1388
 msgid "REJECT"
 msgstr "차단"
 
-#: ../src/sysinfo-window.c:1424
+#: ../src/sysinfo-window.c:1450
 msgid "Accept"
 msgstr "허용"
 
-#: ../src/sysinfo-window.c:1426
+#: ../src/sysinfo-window.c:1452
 msgid "Drop"
 msgstr "비허용"
 
-#: ../src/sysinfo-window.c:1461
+#: ../src/sysinfo-window.c:1487
 msgid "INPUT"
 msgstr "인바운드"
 
-#: ../src/sysinfo-window.c:1462
+#: ../src/sysinfo-window.c:1488
 msgid "OUTPUT"
 msgstr "아웃바운드"
 
-#: ../src/sysinfo-window.c:1463
+#: ../src/sysinfo-window.c:1489
 msgid "FORWARD"
 msgstr "포워드"
 
-#: ../src/sysinfo-window.c:1489
+#: ../src/sysinfo-window.c:1515
 msgid "Could not find firewall policy."
 msgstr "방화벽 정책을 찾을 수 없습니다."
 
-#: ../src/sysinfo-window.c:1785
+#: ../src/sysinfo-window.c:1811
 msgid "Safety"
 msgstr "안전"
 
-#: ../src/sysinfo-window.c:1788
+#: ../src/sysinfo-window.c:1814
 msgid "Vulnerable"
 msgstr "취약"
 
-#: ../src/sysinfo-window.c:2110
+#: ../src/sysinfo-window.c:2136
 msgid "Standalone Mode"
 msgstr "독립 운영 모드"
 
-#: ../src/sysinfo-window.c:2112
+#: ../src/sysinfo-window.c:2138
 msgid "Server Managed Mode"
 msgstr "서버 관리 모드"
 
-#: ../src/sysinfo-window.c:2311
+#: ../src/sysinfo-window.c:2337
 msgid "minute"
 msgstr "분"
 
-#: ../src/sysinfo-window.c:2313
+#: ../src/sysinfo-window.c:2339
 msgid "minutes"
 msgstr "분"
 
-#: ../src/sysinfo-window.c:2323
+#: ../src/sysinfo-window.c:2355
 msgid "Enabled"
 msgstr "켜짐"
 
-#: ../src/sysinfo-window.c:2325
+#: ../src/sysinfo-window.c:2357
 msgid "Disabled"
 msgstr "꺼짐"
 
-#: ../src/sysinfo-window.c:2552
+#: ../src/sysinfo-window.c:2593
 msgid "Could not find trusted urls information."
 msgstr "신뢰할 수 있는 URL 목록을 찾을 수 없습니다."
 
-#: ../src/sysinfo-window.c:2577 ../src/sysinfo-window.c:2650
+#: ../src/sysinfo-window.c:2618 ../src/sysinfo-window.c:2707
 msgid "ReadOnly"
 msgstr "읽기전용"
 
-#: ../src/sysinfo-window.c:2778 ../src/rpd-dialog.c:240
+#: ../src/sysinfo-window.c:2836 ../src/rpd-dialog.c:240
 msgid "Could not find information."
 msgstr "매체제어 정책을 찾을 수 없습니다."
 
-#: ../src/sysinfo-window.c:2847
+#: ../src/sysinfo-window.c:2905
 msgid "Do you want to allow push update?"
 msgstr "푸쉬 업데이트를 허용 하겠습니까?"
 
-#: ../src/sysinfo-window.c:2847
+#: ../src/sysinfo-window.c:2905
 msgid "Do you want to deny push update?"
 msgstr "푸쉬 업데이트를 허용하지 않겠습니까?"
 
-#: ../src/sysinfo-window.c:2858
+#: ../src/sysinfo-window.c:2916
 msgid "_Yes"
 msgstr "예"
 
-#: ../src/sysinfo-window.c:2859
+#: ../src/sysinfo-window.c:2917
 msgid "_No"
 msgstr "아니오"
 
-#: ../src/sysinfo-window.c:2862
+#: ../src/sysinfo-window.c:2920
 msgid "Push Update Settings"
 msgstr "푸쉬 업데이트 설정"
 
-#: ../src/sysinfo-window.c:3015
+#: ../src/sysinfo-window.c:3073
 msgid "Please make sure to check log search period."
 msgstr "로그 검색 기간을 확인해 주시기 바랍니다."
 
-#: ../src/sysinfo-window.c:3018
+#: ../src/sysinfo-window.c:3076
 msgid "Log Search Period Settings"
 msgstr "로그 검색 기간 설정"
 
-#: ../src/sysinfo-window.c:3523
+#: ../src/sysinfo-window.c:3582
 msgid "Gooroom Platform Management Server"
 msgstr "구름 관리 서버"
 
@@ -744,74 +744,74 @@ msgstr "구름 시스템 보안 상태 자세히 보기"
 msgid "Unconfigured"
 msgstr "구성되지않음"
 
-msgid "Policy"
-msgstr "정책"
+#~ msgid "Policy"
+#~ msgstr "정책"
 
-msgid "Period"
-msgstr "기간"
+#~ msgid "Period"
+#~ msgstr "기간"
 
-msgid "Notifications Settings"
-msgstr "알림설정"
+#~ msgid "Notifications Settings"
+#~ msgstr "알림설정"
 
-msgid "Block"
-msgstr "차단"
+#~ msgid "Block"
+#~ msgstr "차단"
 
-msgid "ports"
-msgstr "포트"
+#~ msgid "ports"
+#~ msgstr "포트"
 
-msgid "keyboard"
-msgstr "USB 키보드"
+#~ msgid "keyboard"
+#~ msgstr "USB 키보드"
 
-msgid "sound"
-msgstr "사운드"
+#~ msgid "sound"
+#~ msgstr "사운드"
 
-msgid "usb_memory"
-msgstr "USB 메모리"
+#~ msgid "usb_memory"
+#~ msgstr "USB 메모리"
 
-msgid "network"
-msgstr "네트워크"
+#~ msgid "network"
+#~ msgstr "네트워크"
 
-msgid "usb_network"
-msgstr "USB 네트워크"
+#~ msgid "usb_network"
+#~ msgstr "USB 네트워크"
 
-msgid "cd_dvd"
-msgstr "CD/DVD"
+#~ msgid "cd_dvd"
+#~ msgstr "CD/DVD"
 
-msgid "clipboard"
-msgstr "클립보드"
+#~ msgid "clipboard"
+#~ msgstr "클립보드"
 
-msgid "mouse"
-msgstr "USB 마우스"
+#~ msgid "mouse"
+#~ msgstr "USB 마우스"
 
-msgid "bluetooth"
-msgstr "블루투스"
+#~ msgid "bluetooth"
+#~ msgstr "블루투스"
 
-msgid "printer"
-msgstr "프린터"
+#~ msgid "printer"
+#~ msgstr "프린터"
 
-msgid "screen_capture"
-msgstr "스크린캡쳐"
+#~ msgid "screen_capture"
+#~ msgstr "스크린캡쳐"
 
-msgid "wireless"
-msgstr "무선인터넷"
+#~ msgid "wireless"
+#~ msgstr "무선인터넷"
 
-msgid "camera"
-msgstr "카메라"
+#~ msgid "camera"
+#~ msgstr "카메라"
 
-msgid "microphone"
-msgstr "녹음"
+#~ msgid "microphone"
+#~ msgstr "녹음"
 
-msgid "All"
-msgstr "모두"
+#~ msgid "All"
+#~ msgstr "모두"
 
-msgid "Normal"
-msgstr "정상"
+#~ msgid "Normal"
+#~ msgstr "정상"
 
-msgid "Error"
-msgstr "오류"
+#~ msgid "Error"
+#~ msgstr "오류"
 
-msgid "ALL"
-msgstr "모두"
+#~ msgid "ALL"
+#~ msgstr "모두"
 
-msgid "usb_etc"
-msgstr "기타 USB"
+#~ msgid "usb_etc"
+#~ msgstr "기타 USB"

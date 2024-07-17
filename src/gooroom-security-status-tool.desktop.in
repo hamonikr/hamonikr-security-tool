@@ -2,8 +2,7 @@
 _Name=Gooroom Security Status Tool
 Icon=preferences-system-firewall
 Exec=gooroom-security-status-tool
-Comment[en_GB]=Check the security status of the Gooroom platform
-Comment[ko]=구름 보안 상태를 확인합니다
+_Comment=Check the security status of the Gooroom platform.
 Terminal=false
 Type=Application
 StartupNotify=true

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gooroom-security-status-tools 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-02 16:56+0900\n"
+"POT-Creation-Date: 2024-07-17 14:42+0900\n"
 "PO-Revision-Date: 2019-08-23 11:54+0900\n"
 "Language-Team: Gooroom <gooroom@gooroom.kr>\n"
 "Language: en\n"
@@ -272,6 +272,10 @@ msgstr "View more detail"
 #: ../src/gooroom-security-status-tool.desktop.in.h:1
 msgid "Gooroom Security Status Tool"
 msgstr "Gooroom Security Status Tool"
+
+#: ../src/gooroom-security-status-tool.desktop.in.h:2
+msgid "Check the security status of the Gooroom platform."
+msgstr "Check the security status of the Gooroom platform."
 
 #: ../data/kr.gooroom.security.status.tools.policy.in.in.h:1
 msgid "Gooroom Management Settings"

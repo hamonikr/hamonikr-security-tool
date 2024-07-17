@@ -2032,12 +2032,12 @@ system_basic_info_update (SysinfoWindow *window)
 	{
 		gchar *os_info = NULL;
 		gchar *contents = NULL;
-		g_file_get_contents ("/etc/lsb-release", &contents, NULL, NULL);
+		g_file_get_contents ("/etc/gooroom/info", &contents, NULL, NULL);
 		if (contents) {
 			guint i = 0;
 			gchar **lines = g_strsplit (contents, "\n", -1);
 			for (i = 0; lines[i] != NULL; i++) {
-				if (g_str_has_prefix (lines[i], "DISTRIB_DESCRIPTION=")) {
+				if (g_str_has_prefix (lines[i], "DESCRIPTION=")) {
 					gchar **tokens = g_strsplit (lines[i], "=", -1);
 					if (tokens[1]) {
 						os_info = stripped_double_quoations (tokens[1]);

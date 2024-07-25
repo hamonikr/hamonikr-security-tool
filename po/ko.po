@@ -748,74 +748,74 @@ msgstr "구름 시스템 보안 상태 자세히 보기"
 msgid "Unconfigured"
 msgstr "구성되지않음"
 
-#~ msgid "Policy"
-#~ msgstr "정책"
+msgid "Policy"
+msgstr "정책"
 
-#~ msgid "Period"
-#~ msgstr "기간"
+msgid "Period"
+msgstr "기간"
 
-#~ msgid "Notifications Settings"
-#~ msgstr "알림설정"
+msgid "Notifications Settings"
+msgstr "알림설정"
 
-#~ msgid "Block"
-#~ msgstr "차단"
+msgid "Block"
+msgstr "차단"
 
-#~ msgid "ports"
-#~ msgstr "포트"
+msgid "ports"
+msgstr "포트"
 
-#~ msgid "keyboard"
-#~ msgstr "USB 키보드"
+msgid "keyboard"
+msgstr "USB 키보드"
 
-#~ msgid "sound"
-#~ msgstr "사운드"
+msgid "sound"
+msgstr "사운드"
 
-#~ msgid "usb_memory"
-#~ msgstr "USB 메모리"
+msgid "usb_memory"
+msgstr "USB 메모리"
 
-#~ msgid "network"
-#~ msgstr "네트워크"
+msgid "network"
+msgstr "네트워크"
 
-#~ msgid "usb_network"
-#~ msgstr "USB 네트워크"
+msgid "usb_network"
+msgstr "USB 네트워크"
 
-#~ msgid "cd_dvd"
-#~ msgstr "CD/DVD"
+msgid "cd_dvd"
+msgstr "CD/DVD"
 
-#~ msgid "clipboard"
-#~ msgstr "클립보드"
+msgid "clipboard"
+msgstr "클립보드"
 
-#~ msgid "mouse"
-#~ msgstr "USB 마우스"
+msgid "mouse"
+msgstr "USB 마우스"
 
-#~ msgid "bluetooth"
-#~ msgstr "블루투스"
+msgid "bluetooth"
+msgstr "블루투스"
 
-#~ msgid "printer"
-#~ msgstr "프린터"
+msgid "printer"
+msgstr "프린터"
 
-#~ msgid "screen_capture"
-#~ msgstr "스크린캡쳐"
+msgid "screen_capture"
+msgstr "스크린캡쳐"
 
-#~ msgid "wireless"
-#~ msgstr "무선인터넷"
+msgid "wireless"
+msgstr "무선인터넷"
 
-#~ msgid "camera"
-#~ msgstr "카메라"
+msgid "camera"
+msgstr "카메라"
 
-#~ msgid "microphone"
-#~ msgstr "녹음"
+msgid "microphone"
+msgstr "녹음"
 
-#~ msgid "All"
-#~ msgstr "모두"
+msgid "All"
+msgstr "모두"
 
-#~ msgid "Normal"
-#~ msgstr "정상"
+msgid "Normal"
+msgstr "정상"
 
-#~ msgid "Error"
-#~ msgstr "오류"
+msgid "Error"
+msgstr "오류"
 
-#~ msgid "ALL"
-#~ msgstr "모두"
+msgid "ALL"
+msgstr "모두"
 
-#~ msgid "usb_etc"
-#~ msgstr "기타 USB"
+msgid "usb_etc"
+msgstr "기타 USB"

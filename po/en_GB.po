@@ -745,71 +745,71 @@ msgstr "Details Security Status Of Gooroom System"
 msgid "Unconfigured"
 msgstr "Unconfigured"
 
-#~ msgid "Policy"
-#~ msgstr "Policy"
+msgid "Policy"
+msgstr "Policy"
 
-#~ msgid "Period"
-#~ msgstr "Period"
+msgid "Period"
+msgstr "Period"
 
-#~ msgid "Notifications Settings"
-#~ msgstr "Notifications Settings"
+msgid "Notifications Settings"
+msgstr "Notifications Settings"
 
-#~ msgid "Block"
-#~ msgstr "Block"
+msgid "Block"
+msgstr "Block"
 
-#~ msgid "ports"
-#~ msgstr "ports"
+msgid "ports"
+msgstr "ports"
 
-#~ msgid "keyboard"
-#~ msgstr "USB Keyboard"
+msgid "keyboard"
+msgstr "USB Keyboard"
 
-#~ msgid "sound"
-#~ msgstr "Sound"
+msgid "sound"
+msgstr "Sound"
 
-#~ msgid "usb_memory"
-#~ msgstr "USB Memory"
+msgid "usb_memory"
+msgstr "USB Memory"
 
-#~ msgid "network"
-#~ msgstr "Network"
+msgid "network"
+msgstr "Network"
 
-#~ msgid "usb_network"
-#~ msgstr "USB Network"
+msgid "usb_network"
+msgstr "USB Network"
 
-#~ msgid "cd_dvd"
-#~ msgstr "CD/DVD"
+msgid "cd_dvd"
+msgstr "CD/DVD"
 
-#~ msgid "clipboard"
-#~ msgstr "Clipboard"
+msgid "clipboard"
+msgstr "Clipboard"
 
-#~ msgid "mouse"
-#~ msgstr "USB Mouse"
+msgid "mouse"
+msgstr "USB Mouse"
 
-#~ msgid "bluetooth"
-#~ msgstr "Bluetooth"
+msgid "bluetooth"
+msgstr "Bluetooth"
 
-#~ msgid "printer"
-#~ msgstr "printer"
+msgid "printer"
+msgstr "printer"
 
-#~ msgid "screen_capture"
-#~ msgstr "Screen Capture"
+msgid "screen_capture"
+msgstr "Screen Capture"
 
-#~ msgid "wireless"
-#~ msgstr "Wireless"
+msgid "wireless"
+msgstr "Wireless"
 
-#~ msgid "camera"
-#~ msgstr "Camera"
+msgid "camera"
+msgstr "Camera"
 
-#~ msgid "microphone"
-#~ msgstr "Recording"
+msgid "microphone"
+msgstr "Recording"
 
-#~ msgid "All"
-#~ msgstr "All"
+msgid "All"
+msgstr "All"
 
-#~ msgid "Normal"
-#~ msgstr "Normal"
+msgid "Normal"
+msgstr "Normal"
 
-#~ msgid "Error"
-#~ msgstr "Error"
+msgid "Error"
+msgstr "Error"
 
-#~ msgid "ALL"
-#~ msgstr "ALL"
+msgid "ALL"
+msgstr "ALL"

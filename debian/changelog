@@ -1,3 +1,15 @@
+gooroom-security-status-tools (4.1.0+grm4u1) unstable; urgency=medium
+
+  [ cjheo ]
+  * [c0a62ea0] Replace deprecated functions
+  * [7f8c69e6] Update gooroom-security-status-tool.desktop.in.in
+
+  [ boyeon.choi ]
+  * [db96044c] Change OS info path
+  * [f1eee4d5] Add translation
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Fri, 30 Aug 2024 16:02:58 +0900
+
 gooroom-security-status-tools (4.0.0+grm4u1) unstable; urgency=medium
 
   [ jongkyung.woo ]

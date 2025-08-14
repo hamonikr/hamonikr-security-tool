@@ -230,8 +230,8 @@ msgid "Log Search Period Settings"
 msgstr "로그 검색 기간 설정"
 
 #: ../src/sysinfo-window.c:3582
-msgid "Gooroom Platform Management Server"
-msgstr "구름 관리 서버"
+msgid "HamoniKR Platform Management Server"
+msgstr "하모니카 관리 서버"
 
 #: ../src/rpd-dialog.c:66 ../src/rpd-dialog.c:77 ../src/sysinfo-window.ui.h:53
 msgid "Status"
@@ -350,12 +350,12 @@ msgid "Server Certificates Location"
 msgstr "서버 인증서 위치"
 
 #: ../src/sysinfo-window.ui.h:15
-msgid "Gooroom Management Server"
-msgstr "구름 관리 서버"
+msgid "HamoniKR Management Server"
+msgstr "하모니카 관리 서버"
 
 #: ../src/sysinfo-window.ui.h:16
-msgid "Gooroom Agent Service"
-msgstr "구름 에이전트 서비스"
+msgid "HamoniKR Agent Service"
+msgstr "하모니카 에이전트 서비스"
 
 #: ../src/sysinfo-window.ui.h:17
 msgid "Management Server"
@@ -741,8 +741,8 @@ msgid "page"
 msgstr ""
 
 #: ../src/sysinfo-window.ui.h:115
-msgid "Details Security Status Of Gooroom System"
-msgstr "구름 시스템 보안 상태 자세히 보기"
+msgid "Details Security Status Of HamoniKR System"
+msgstr "하모니카 시스템 보안 상태 자세히 보기"
 
 #: ../src/rpd-dialog.ui.h:1
 msgid "Unconfigured"

@@ -29,11 +29,11 @@
 
 G_BEGIN_DECLS
 
-#define GOOROOM_SECURITY_LOGPARSER_SEEKTIME    "/var/tmp/GOOROOM-SECURITY-LOGPARSER-SEEKTIME"
+#define HAMONIKR_SECURITY_LOGPARSER_SEEKTIME    "/var/tmp/HAMONIKR-SECURITY-LOGPARSER-SEEKTIME"
 #define HAMONIKR_MANAGEMENT_SERVER_CONF         "/etc/hamonikr/hamonikr-client-server-register/gcsr.conf"
 #define HAMONIKR_AGENT_SERVICE_NAME             "hamonikr-agent.service"
-#define HAMONIKR_BROWSER_TRUST				   "/usr/share/hamonikr/browser/policies/trust/managed/ui-policy.json"
-#define HAMONIKR_BROWSER_UNTRUST			   "/usr/share/hamonikr/browser/policies/untrust/managed/ui-policy.json"
+#define HAMONIKR_SYSTEMD_CONTROL_HELPER         "/usr/libexec/hamonikr-security-tool/hamonikr-systemd-control-helper"
+
 
 #define	DEFAULT_YEAR                            1970 
 #define	DEFAULT_MONTH                           1
@@ -61,9 +61,6 @@ enum {
 
 enum {
     ACCOUNT_TYPE_LOCAL = 0,
-    ACCOUNT_TYPE_GOOROOM,
-    ACCOUNT_TYPE_GOOGLE,
-    ACCOUNT_TYPE_NAVER,
     ACCOUNT_TYPE_UNKNOWN
 };
 

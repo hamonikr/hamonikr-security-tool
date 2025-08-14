@@ -651,7 +651,7 @@ child_watch_func (GPid     pid,
 
 	g_spawn_close_pid (pid);
 
-	if (!is_systemd_service_available (GOOROOM_AGENT_SERVICE_NAME)) {
+	if (!is_systemd_service_available (HAMONIKR_AGENT_SERVICE_NAME)) {
 		gtk_widget_set_sensitive (priv->swt_service, FALSE);
 		gtk_switch_set_active (GTK_SWITCH (priv->swt_service), FALSE);
 		return;
@@ -659,7 +659,7 @@ child_watch_func (GPid     pid,
 
 	gtk_widget_set_sensitive (priv->swt_service, TRUE);
 
-	service_active = is_systemd_service_active (GOOROOM_AGENT_SERVICE_NAME);
+	service_active = is_systemd_service_active (HAMONIKR_AGENT_SERVICE_NAME);
 	switch_active = gtk_switch_get_active (GTK_SWITCH (priv->swt_service));
 
 	g_signal_handlers_block_by_func (priv->swt_service, on_service_state_changed, window);
@@ -706,9 +706,9 @@ gooroom_agent_service_control (gpointer data)
 	gtk_widget_set_sensitive (GTK_WIDGET (priv->swt_service), FALSE);
 
 	if (gtk_switch_get_active (GTK_SWITCH (priv->swt_service)))
-		cmd = g_strdup_printf ("pkexec %s -s %s -a", GOOROOM_SYSTEMD_CONTROL_HELPER, GOOROOM_AGENT_SERVICE_NAME);
+		cmd = g_strdup_printf ("pkexec %s -s %s -a", HAMONIKR_SYSTEMD_CONTROL_HELPER, HAMONIKR_AGENT_SERVICE_NAME);
 	else
-		cmd = g_strdup_printf ("pkexec %s -s %s -d", GOOROOM_SYSTEMD_CONTROL_HELPER, GOOROOM_AGENT_SERVICE_NAME);
+		cmd = g_strdup_printf ("pkexec %s -s %s -d", HAMONIKR_SYSTEMD_CONTROL_HELPER, HAMONIKR_AGENT_SERVICE_NAME);
 
 	g_shell_parse_argv (cmd, NULL, &argv, NULL);
 
@@ -746,7 +746,7 @@ gooroom_agent_service_status_update (gpointer data)
 	window = SYSINFO_WINDOW (data);
 	priv = window->priv;
 
-	if (!is_systemd_service_available (GOOROOM_AGENT_SERVICE_NAME)) {
+	if (!is_systemd_service_available (HAMONIKR_AGENT_SERVICE_NAME)) {
 		gtk_widget_set_sensitive (priv->swt_service, FALSE);
 		return FALSE;
 	}
@@ -755,7 +755,7 @@ gooroom_agent_service_status_update (gpointer data)
 
 	g_signal_handlers_block_by_func (priv->swt_service, on_service_state_changed, window);
 
-	gtk_switch_set_active (GTK_SWITCH (priv->swt_service), is_systemd_service_active (GOOROOM_AGENT_SERVICE_NAME));
+	gtk_switch_set_active (GTK_SWITCH (priv->swt_service), is_systemd_service_active (HAMONIKR_AGENT_SERVICE_NAME));
 
 	g_signal_handlers_unblock_by_func (priv->swt_service, on_service_state_changed, window);
 
@@ -801,7 +801,7 @@ settings_update_ui (SysinfoWindow *window)
 
 	keyfile = g_key_file_new ();
 
-	g_key_file_load_from_file (keyfile, GOOROOM_MANAGEMENT_SERVER_CONF, G_KEY_FILE_KEEP_COMMENTS, &error);
+	g_key_file_load_from_file (keyfile, HAMONIKR_MANAGEMENT_SERVER_CONF, G_KEY_FILE_KEEP_COMMENTS, &error);
 
 	if (error == NULL) {
 		if (g_key_file_has_group (keyfile, "domain")) {
@@ -2142,7 +2142,7 @@ system_basic_info_update (SysinfoWindow *window)
 			gchar *device_id = NULL, *ip = NULL, *port = NULL;
 
 			keyfile = g_key_file_new ();
-			g_key_file_load_from_file (keyfile, GOOROOM_MANAGEMENT_SERVER_CONF, G_KEY_FILE_KEEP_COMMENTS, &error);
+			g_key_file_load_from_file (keyfile, HAMONIKR_MANAGEMENT_SERVER_CONF, G_KEY_FILE_KEEP_COMMENTS, &error);
 
 			if (error == NULL) {
 				if (g_key_file_has_group (keyfile, "certificate")) {
@@ -2307,15 +2307,8 @@ system_device_security_update (SysinfoWindow *window)
 
 	int account_type = get_account_type (g_get_user_name ());
 
-	if (account_type == ACCOUNT_TYPE_GOOROOM) {
-		int maxdays = get_password_max_days_for_online_user ();
-		set_password_max_day (maxdays, window);
-	} else if (account_type == ACCOUNT_TYPE_LOCAL) {
+	if (account_type == ACCOUNT_TYPE_LOCAL) {
 		set_password_max_days_from_command (window);
-	} else if (account_type == ACCOUNT_TYPE_GOOGLE ||
-               account_type == ACCOUNT_TYPE_NAVER) {
-		gtk_widget_hide (priv->box_change_pw_cycle);
-	} else {
 	}
 
 	/* get screensaver time */
@@ -2376,118 +2369,7 @@ log_filter_button_changed (GtkWidget *widget, guint status, gpointer data)
 	status & LOG_LEVEL_EMERG? gtk_widget_show (priv->lbl_emerg) : gtk_widget_hide (priv->lbl_emerg);
 }
 
-static void
-gooroom_browser_status_update (GtkWidget *button, gpointer user_data)
-{
-	SysinfoWindow *window = SYSINFO_WINDOW (user_data);
-	SysinfoWindowPrivate *priv = window->priv;
 
-	gchar *file = NULL, *data = NULL, *markup = NULL;
-	gboolean ret = FALSE;
-
-	if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button)))
-		return;
-
-	if (button == priv->rdo_trusted) {
-		file = g_strdup_printf (GOOROOM_BROWSER_TRUST);
-		gtk_widget_show (priv->box_trust_list);
-	} else if (button == priv->rdo_untrusted) {
-		file = g_strdup_printf (GOOROOM_BROWSER_UNTRUST);
-		gtk_widget_hide (priv->box_trust_list);
-	} else {
-		return;
-	}
-
-	if (!g_file_test (file, G_FILE_TEST_EXISTS)) {
-		goto error;
-	}
-
-	g_file_get_contents (file, &data, NULL, NULL);
-
-	if (!data) {
-		goto error;
-	}
-
-	enum json_tokener_error jerr = json_tokener_success;
-	json_object *root_obj = json_tokener_parse_verbose (data, &jerr);
-	if (jerr != json_tokener_success) {
-		goto error;
-	}
-
-	ret =TRUE;
-
-	json_object *obj1 = JSON_OBJECT_GET (root_obj, "PageSourceViewEnabled");
-	json_object *obj2 = JSON_OBJECT_GET (root_obj, "DownloadRestrictions");
-	json_object *obj3 = JSON_OBJECT_GET (root_obj, "PrintingEnabled");
-	json_object *obj4 = JSON_OBJECT_GET (root_obj, "DeveloperToolsAvailability");
-
-	markup = g_strdup_printf("<span fgcolor='#5ea80d'>%s</span>", _("Allow"));
-	if (button == priv->rdo_trusted) {
-		gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_socket), markup);
-		gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_worker), markup);
-
-	} else if (button == priv->rdo_untrusted) {
-		if (gtk_label_get_use_markup (GTK_LABEL (priv->lbl_untrusted_socket)))
-			gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_socket), markup);
-		else
-			gtk_label_set_text (GTK_LABEL (priv->lbl_site_socket),
-								gtk_label_get_text (GTK_LABEL (priv->lbl_untrusted_socket)));
-
-		if (gtk_label_get_use_markup (GTK_LABEL (priv->lbl_untrusted_worker)))
-			gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_worker), markup);
-		else
-			gtk_label_set_text (GTK_LABEL (priv->lbl_site_worker),
-								gtk_label_get_text (GTK_LABEL (priv->lbl_untrusted_worker)));
-	}
-
-	if (obj1){
-		const gchar *val;
-		val = json_object_get_string (obj1);
-
-		if (g_strcmp0 (val, "false") == 0 || g_strcmp0 (val, "0") == 0)
-	        gtk_label_set_text ( GTK_LABEL (priv->lbl_site_source), _("Disallow"));
-		else
-	        gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_source), markup);
-	}
-
-	if (obj2){
-		const gchar *val;
-		val = json_object_get_string (obj2);
-
-		if (g_strcmp0 (val, "0") != 0)
-	        gtk_label_set_text ( GTK_LABEL (priv->lbl_site_download),_("Disallow"));
-		else
-	        gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_download), markup);
-	}
-
-	if (obj3){
-		const gchar *val;
-		val = json_object_get_string (obj3);
-
-		if (g_strcmp0 (val, "false") == 0 || g_strcmp0 (val, "0") == 0)
-	        gtk_label_set_text ( GTK_LABEL (priv->lbl_site_printer), _("Disallow"));
-		else
-	        gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_printer), markup);
-	}
-
-	if (obj4){
-		const gchar *val;
-		val = json_object_get_string (obj4);
-
-		if (g_strcmp0 (val, "1") != 0)
-	        gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_develop), _("Disallow"));
-		else
-	        gtk_label_set_markup ( GTK_LABEL (priv->lbl_site_develop), markup);
-	}
-
-	json_object_put (root_obj);
-
-error:
-	g_free (data);
-	g_free (file);
-	g_free (markup);
-
-}
 
 static void
 gooroom_network_status_update (GNetworkMonitor *monitor, gboolean network_available, gpointer user_data)
@@ -2498,104 +2380,7 @@ gooroom_network_status_update (GNetworkMonitor *monitor, gboolean network_availa
 	priv->net_available = network_available;
 }
 
-static void
-system_browser_policy_update (SysinfoWindow *window)
-{
-	gchar *file = NULL;
-	gchar *data = NULL;
-	gboolean ret = FALSE;
-    gchar *markup = NULL;
 
-	SysinfoWindowPrivate *priv = window->priv;
-
-	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->rdo_trusted)))
-		gooroom_browser_status_update (GTK_WIDGET(priv->rdo_trusted), window);
-	else
-		gooroom_browser_status_update (GTK_WIDGET(priv->rdo_untrusted), window);
-
-	file = g_strdup_printf ("/usr/share/hamonikr/browser/policies/mainpref.json");
-
-	if (!g_file_test (file, G_FILE_TEST_EXISTS)) {
-		goto error;
-	}
-
-	g_file_get_contents (file, &data, NULL, NULL);
-
-	if (!data) {
-		goto error;
-	}
-
-	enum json_tokener_error jerr = json_tokener_success;
-	json_object *root_obj = json_tokener_parse_verbose (data, &jerr);
-	if (jerr != json_tokener_success) {
-		goto error;
-	}
-
-	json_object *obj1 = JSON_OBJECT_GET (root_obj, "gooroom");
-	json_object *obj2 = JSON_OBJECT_GET (obj1, "policy");
-	json_object *obj2_1 = JSON_OBJECT_GET (obj2, "whitelist");
-	json_object *obj2_2 = JSON_OBJECT_GET (obj2, "websocket");
-	json_object *obj2_3 = JSON_OBJECT_GET (obj2, "webworker");
-
-	if (obj2_1) {
-		GtkTreeIter iter;
-		GtkTreeModel *model;
-		model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->trv_browser_urls));
-
-		int i = 0, len = 0;
-		len = json_object_array_length (obj2_1);
-		for (i = 0; i < len; i++) {
-			json_object *t_url_obj = json_object_array_get_idx (obj2_1, i);
-			const char *url = json_object_get_string (t_url_obj);
-
-			gtk_list_store_append (GTK_LIST_STORE (model), &iter);
-			gtk_list_store_set (GTK_LIST_STORE (model), &iter,
-					0, url,
-					-1);
-		}
-
-		ret = TRUE;
-	}
-
-    markup = g_strdup_printf("<span fgcolor='#5ea80d'>%s</span>", _("Allow"));
-
-	if (obj2_2){
-		const gchar *val;
-		val = json_object_get_string (obj2_2);
-
-		if (g_strcmp0 (val, "false") == 0 || g_strcmp0 (val, "0") == 0)
-			gtk_label_set_text ( GTK_LABEL (priv->lbl_untrusted_socket), _("Disallow"));
-		else if (g_strcmp0 (val, "true") == 0 || g_strcmp0 (val, "1") == 0)
-			gtk_label_set_markup ( GTK_LABEL (priv->lbl_untrusted_socket), markup);
-		else
-			gtk_label_set_text ( GTK_LABEL (priv->lbl_untrusted_socket), _("Unknown"));
-	}
-
-	if (obj2_3){
-		const gchar *val;
-		val = json_object_get_string (obj2_3);
-
-		if (g_strcmp0 (val, "false") == 0 || g_strcmp0 (val, "0") == 0)
-			gtk_label_set_text ( GTK_LABEL (priv->lbl_untrusted_worker), _("Disallow"));
-		else if (g_strcmp0 (val, "true") == 0 || g_strcmp0 (val, "1") == 0)
-			gtk_label_set_markup ( GTK_LABEL (priv->lbl_untrusted_worker), markup);
-		else
-			gtk_label_set_text ( GTK_LABEL (priv->lbl_untrusted_worker), _("Unknown"));
-	}
-
-	json_object_put (root_obj);
-
-error:
-	g_free (data);
-	g_free (file);
-
-	if (!ret) {
-		markup = g_markup_printf_escaped ("%s", _("Could not find trusted urls information."));
-		gtk_label_set_markup (GTK_LABEL (priv->lbl_site_list), markup);
-		gtk_widget_set_sensitive (priv->btn_site_list, FALSE);
-	}
-	g_free (markup);
-}
 
 static void
 create_item (SysinfoWindow *window, char *key, const char *val)
@@ -2993,7 +2778,7 @@ update_ui (gpointer data)
 
 	system_push_update_update (window);
 	system_resource_control_update (window);
-	system_browser_policy_update (window);
+
 
 	return FALSE;
 }
@@ -3122,7 +2907,7 @@ on_safety_measure_button_clicked (GtkButton *button, gpointer data)
 
 	gtk_widget_set_sensitive (priv->btn_safety_measure, FALSE);
 
-	if (is_systemd_service_active (GOOROOM_AGENT_SERVICE_NAME)) {
+	if (is_systemd_service_active (HAMONIKR_AGENT_SERVICE_NAME)) {
 		send_taking_measures_signal_to_agent ();
 	} else {
 		send_taking_measure_signal_to_self ();
@@ -3579,7 +3364,7 @@ sysinfo_window_init (SysinfoWindow *self)
 
 	accel_init (self);
 
-	gtk_label_set_text (GTK_LABEL (priv->lbl_title), _("Gooroom Platform Management Server"));
+	gtk_label_set_text (GTK_LABEL (priv->lbl_title), _("HamoniKR Platform Management Server"));
 
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->trv_security_log));
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (GTK_LIST_STORE (model)), 4, GTK_SORT_DESCENDING);
@@ -3616,8 +3401,7 @@ sysinfo_window_init (SysinfoWindow *self)
 	g_signal_connect (G_OBJECT (priv->btn_search), "clicked", G_CALLBACK (btn_search_clicked_cb), self);
 	g_signal_connect (G_OBJECT (priv->btn_log_filter), "toggled", G_CALLBACK (log_filter_clicked_cb), self);
 	g_signal_connect (G_OBJECT (priv->btn_site_list), "clicked", G_CALLBACK (site_list_clicked_cb), self);
-	g_signal_connect (G_OBJECT (priv->rdo_trusted), "toggled", G_CALLBACK (gooroom_browser_status_update), self);
-	g_signal_connect (G_OBJECT (priv->rdo_untrusted), "toggled", G_CALLBACK (gooroom_browser_status_update), self);
+
 	g_signal_connect (G_OBJECT (net_monitor), "network-changed", G_CALLBACK (gooroom_network_status_update), self);
 
 	g_timeout_add (500, (GSourceFunc) update_ui, self);

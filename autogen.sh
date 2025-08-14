@@ -10,10 +10,4 @@ test -z "$srcdir" && srcdir=.
     exit 1
 }
 
-which gnome-autogen.sh || {
-    echo "You need to install gnome-common from GNOME Git"
-    exit 1
-}
-
-REQUIRED_AUTOMAKE_VERSION=1.9
-. gnome-autogen.sh
+autoreconf --force --install --verbose

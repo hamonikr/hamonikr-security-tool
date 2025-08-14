@@ -14951,7 +14951,7 @@ printf "%s\n" "yes" >&6; }
 
 fi
 
-ac_config_files="$ac_config_files Makefile data/Makefile common/Makefile src/Makefile po/Makefile.in"
+ac_config_files="$ac_config_files Makefile data/Makefile common/Makefile src/Makefile utils/Makefile po/Makefile.in"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -15974,6 +15974,7 @@ do
     "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
     "common/Makefile") CONFIG_FILES="$CONFIG_FILES common/Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+    "utils/Makefile") CONFIG_FILES="$CONFIG_FILES utils/Makefile" ;;
     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
     "po/stamp-it") CONFIG_COMMANDS="$CONFIG_COMMANDS po/stamp-it" ;;
 

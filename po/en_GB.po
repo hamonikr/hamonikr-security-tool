@@ -230,8 +230,8 @@ msgid "Log Search Period Settings"
 msgstr "Log Search Period Settings"
 
 #: ../src/sysinfo-window.c:3582
-msgid "Gooroom Platform Management Server"
-msgstr "Gooroom Platform Management Server"
+msgid "HamoniKR Platform Management Server"
+msgstr "HamoniKR Platform Management Server"
 
 #: ../src/rpd-dialog.c:66 ../src/rpd-dialog.c:77 ../src/sysinfo-window.ui.h:53
 msgid "Status"
@@ -350,12 +350,12 @@ msgid "Server Certificates Location"
 msgstr "Server Certificates Location"
 
 #: ../src/sysinfo-window.ui.h:15
-msgid "Gooroom Management Server"
-msgstr "Gooroom Management Server"
+msgid "HamoniKR Management Server"
+msgstr "HamoniKR Management Server"
 
 #: ../src/sysinfo-window.ui.h:16
-msgid "Gooroom Agent Service"
-msgstr "Gooroom Agent Service"
+msgid "HamoniKR Agent Service"
+msgstr "HamoniKR Agent Service"
 
 #: ../src/sysinfo-window.ui.h:17
 msgid "Management Server"
@@ -738,8 +738,8 @@ msgid "page"
 msgstr "page"
 
 #: ../src/sysinfo-window.ui.h:115
-msgid "Details Security Status Of Gooroom System"
-msgstr "Details Security Status Of Gooroom System"
+msgid "Details Security Status Of HamoniKR System"
+msgstr "Details Security Status Of HamoniKR System"
 
 #: ../src/rpd-dialog.ui.h:1
 msgid "Unconfigured"

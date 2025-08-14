@@ -1,7 +1,7 @@
 libcommon_la_CPPFLAGS = \
 	-I$(top_srcdir)/common \
-	-DHAMONIKR_LOGPARSER_SEEKTIME_HELPER=\"/usr/lib/hamonikr-security-utils/hamonikr-logparser-seektime-helper\" \
-	-DHAMONIKR_SECURITY_LOGPARSER_WRAPPER=\"/usr/lib/hamonikr-security-utils/hamonikr-security-logparser-wrapper\" \
+	-DHAMONIKR_LOGPARSER_SEEKTIME_HELPER=\"/usr/lib/hamonikr-security-tool/hamonikr-logparser-seektime-helper\" \
+	-DHAMONIKR_SECURITY_LOGPARSER_WRAPPER=\"/usr/lib/hamonikr-security-tool/hamonikr-security-logparser-wrapper\" \
 	$(AM_CPPFLAGS)
 
 noinst_LTLIBRARIES = libcommon.la

@@ -7,18 +7,18 @@
   border-color: rgba(106, 159, 221, 0.05);
   border: solid 1px rgba(106, 159, 221, 0.05);
 } .treeview {
-  background-color: rgba(106, 159, 221, 0.05);
-  color: rgba(0, 1, 0, 0.5);
+  background-color: @theme_base_color;
+  color: @theme_text_color;
   font-size: 97%;
 } .treeview:hover {
-  background-color: rgba(106, 159, 221, 0.1);
+  background-color: alpha(@theme_selected_bg_color, 0.1);
 } .treeview:selected {
-  color: rgba(0, 1, 0, 0.5);
-  background-color: rgba(106, 159, 221, 0.2);
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
 } .treeview header button{
   padding: 6px;
   background-color: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 1, 0, 0.5);
+  color: @theme_text_color;
   min-height: 23px;
   border:groove 1px rgba(0, 0, 0, 0.1);
 }
@@ -29,25 +29,25 @@
 
 popover {
   border-radius: 10px;
-  border: solid 1px #ffffff;
+  border: solid 1px @theme_bg_color;
 }
 
 .color_box {
   border-radius: 10px;
-  background-color: rgba(106, 159, 221, 0.05);
+  background-color: alpha(@theme_base_color, 0.8);
 } .font_box label {
-  color: #393939;
+  color: @theme_text_color;
 }
 
 .info_box {
   border-radius: 10px;
-  background-color: rgba(106, 159, 221, 0.05);
-  color: rgba(0, 1, 0, 0.5);
+  background-color: alpha(@theme_base_color, 0.8);
+  color: @theme_text_color;
 } .line_box {
-  background-color: rgba(106, 159, 221, 0.05);
+  background-color: alpha(@theme_base_color, 0.8);
   border-radius: 10px;
 }.desc {
-  color: #000100;
+  color: @theme_text_color;
 }
 
 #lbl_title {
@@ -56,33 +56,33 @@ popover {
 
 #frame_side {
   border-radius: 10px;
-  background-color: #e6e9f0;;
-  color: #000100;
+  background-color: @theme_base_color;
+  color: @theme_text_color;
 } #trv_sidebar_contents{
   border-radius: 10px;
-  background-color: #e6e9f0;;
+  background-color: @theme_base_color;
   font-size: 97%;
 } #trv_sidebar_contents :hover{
   border-radius: 10px;
-  color: #2f58b7;
-  background-color: rgba(62, 109, 220, 0.2);
+  color: @theme_selected_bg_color;
+  background-color: alpha(@theme_selected_bg_color, 0.2);
 } #trv_sidebar_contents :selected{
   border-radius: 10px;
-  background-color: #3e6ddc;
-  color: #ffffff;
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
 }
 
 .btn_blue {
   border-radius: 10px;
-  background-color: #3e6ddc;
-  color: #ffffff;
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
   font-size: 97%;
 }
 
 .radio {
   border: none;
   border-radius: 10px;
-  color: rgba(0, 1, 0, 0.5);
+  color: @theme_text_color;
   padding-top: 7px;
   padding-bottom: 8px;
   background-color:rgba(0, 0, 0, 0);
@@ -90,8 +90,8 @@ popover {
 }.radio:hover {
   background-color:rgba(0, 0, 0, 0.1);
 }.radio:checked {
-  background-color: #3e6ddc;
-  color: #ffffff;
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
 }.btn_box {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -100,22 +100,22 @@ popover {
 .log_filter_popover {
   border-radius: 10px;
   border: solid 1px rgba(0, 0, 0, 0.2);
-  background-color:#ffffff;
-  color: #000100;
+  background-color: @theme_base_color;
+  color: @theme_text_color;
 }.log_filter_popover:hover {
-  background-color:#ffffff;
-  border-color: #3e6ddc;
+  background-color: @theme_base_color;
+  border-color: @theme_selected_bg_color;
 }.log_filter_popover:active {
   background-color:rgba(62, 109, 220, 0.2);
-  border-color: #3e6ddc;
+  border-color: @theme_selected_bg_color;
 } combobox button {
   font-size: 97%;
   padding: 0px 15px;
 } popover grid {
   min-width: 380px;
 } combobox button:hover {
-  background-color:#ffffff;
-  border-color: #3e6ddc;
+  background-color: @theme_base_color;
+  border-color: @theme_selected_bg_color;
 } .log_btn {
   padding: 0px 15px;
 } .log_btn:disabled {
@@ -129,26 +129,26 @@ popover {
 } #btn_site_list:hover {
   background-color: transparent;
 } #btn_site_list label {
-  color: #0251ff;
+  color: @theme_link_color;
 } #btn_site_list:hover label {
-  color:#356ddc;
+  color: @theme_selected_bg_color;
 } #lbl_site_list:disabled{
-  color: rgba(0, 1, 0, 0.5);
+  color: @theme_text_color;
 }
 
 #image_box {
   padding: 3px;
   border-radius: 10px;
-  background-color: rgba(106, 159, 221, 0.2);
+  background-color: alpha(@theme_selected_bg_color, 0.2);
 }
 
 #btn_safety_measure {
   border-radius: 10px;
   border: solid 1px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
+  background-color: @theme_selected_fg_color;
   padding: 8px 20px 7px;
 } #btn_safety_measure label {
-  color: #000100;
+  color: @theme_text_color;
 } #btn_safety_measure:hover {
   border: solid 1px #3e6ddc;
 } #btn_safety_measure:disabled {

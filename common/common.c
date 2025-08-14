@@ -46,53 +46,18 @@ JSON_OBJECT_GET (json_object *obj, const gchar *key)
 int
 get_account_type (const char *user)
 {
-    int account_type = ACCOUNT_TYPE_LOCAL;
     struct passwd *user_entry = getpwnam (user);
 
     if (!user_entry)
         return ACCOUNT_TYPE_UNKNOWN;
 
-    char **tokens = g_strsplit (user_entry->pw_gecos, ",", -1);
-    if (tokens && (g_strv_length (tokens) > 4)) {
-        if (tokens[4]) {
-            if (g_str_equal (tokens[4], "hamonikr-account")) {
-                account_type = ACCOUNT_TYPE_GOOROOM;
-            } else if (g_str_equal (tokens[4], "google-account")) {
-                account_type = ACCOUNT_TYPE_GOOGLE;
-            } else if (g_str_equal (tokens[4], "naver-account")) {
-                account_type = ACCOUNT_TYPE_NAVER;
-            } else {
-                account_type = ACCOUNT_TYPE_LOCAL;
-            }
-        }
-    }
-
-    g_strfreev (tokens);
-
-    return account_type;
+    return ACCOUNT_TYPE_LOCAL;
 }
 
 gboolean
 is_local_user (void)
 {
-	gboolean ret = TRUE;
-
-	struct passwd *user_entry = getpwnam (g_get_user_name ());
-	if (user_entry) {
-		gchar **tokens = g_strsplit (user_entry->pw_gecos, ",", -1);
-
-		if (g_strv_length (tokens) > 4 ) {
-			if (tokens[4] && (g_str_equal (tokens[4], "hamonikr-account") ||
-                              g_str_equal (tokens[4], "google-account") ||
-                              g_str_equal (tokens[4], "naver-account"))) {
-				ret = FALSE;
-			}
-		}
-
-		g_strfreev (tokens);
-	}
-
-	return ret;
+	return TRUE;
 }
 
 
@@ -156,7 +121,7 @@ send_taking_measure_signal_to_self (void)
 	gchar *pkexec, *cmdline;
 
 	pkexec = g_find_program_in_path ("pkexec");
-	cmdline = g_strdup_printf ("%s %s", pkexec, GOOROOM_LOGPARSER_SEEKTIME_HELPER);
+	cmdline = g_strdup_printf ("%s %s", pkexec, HAMONIKR_LOGPARSER_SEEKTIME_HELPER);
 
 	g_spawn_command_line_sync (cmdline, NULL, NULL, NULL, NULL);
 
@@ -218,10 +183,10 @@ run_security_log_parser_async (gchar *seektime, GIOFunc callback_func, gpointer 
 
     if (seektime)
         cmdline = g_strdup_printf ("%s %s %s %s", pkexec,
-                                   GOOROOM_SECURITY_LOGPARSER_WRAPPER, seektime, lang);
+                                   HAMONIKR_SECURITY_LOGPARSER_WRAPPER, seektime, lang);
     else
         cmdline = g_strdup_printf ("%s %s %s", pkexec,
-                                   GOOROOM_SECURITY_LOGPARSER_WRAPPER, lang);
+                                   HAMONIKR_SECURITY_LOGPARSER_WRAPPER, lang);
 
 	gchar **arr_cmd = g_strsplit (cmdline, " ", -1);
 
@@ -336,7 +301,7 @@ is_standalone_mode (void)
 	gchar *client_name = NULL;
 
 	keyfile = g_key_file_new ();
-	g_key_file_load_from_file (keyfile, GOOROOM_MANAGEMENT_SERVER_CONF, G_KEY_FILE_KEEP_COMMENTS, &error);
+	g_key_file_load_from_file (keyfile, HAMONIKR_MANAGEMENT_SERVER_CONF, G_KEY_FILE_KEEP_COMMENTS, &error);
 
 	if (error == NULL) {
 		if (g_key_file_has_group (keyfile, "certificate")) {

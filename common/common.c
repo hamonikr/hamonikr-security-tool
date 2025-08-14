@@ -55,7 +55,7 @@ get_account_type (const char *user)
     char **tokens = g_strsplit (user_entry->pw_gecos, ",", -1);
     if (tokens && (g_strv_length (tokens) > 4)) {
         if (tokens[4]) {
-            if (g_str_equal (tokens[4], "gooroom-account")) {
+            if (g_str_equal (tokens[4], "hamonikr-account")) {
                 account_type = ACCOUNT_TYPE_GOOROOM;
             } else if (g_str_equal (tokens[4], "google-account")) {
                 account_type = ACCOUNT_TYPE_GOOGLE;
@@ -82,7 +82,7 @@ is_local_user (void)
 		gchar **tokens = g_strsplit (user_entry->pw_gecos, ",", -1);
 
 		if (g_strv_length (tokens) > 4 ) {
-			if (tokens[4] && (g_str_equal (tokens[4], "gooroom-account") ||
+			if (tokens[4] && (g_str_equal (tokens[4], "hamonikr-account") ||
                               g_str_equal (tokens[4], "google-account") ||
                               g_str_equal (tokens[4], "naver-account"))) {
 				ret = FALSE;
@@ -175,9 +175,9 @@ send_taking_measures_signal_to_agent (void)
 	proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
 			G_DBUS_CALL_FLAGS_NONE,
 			NULL,
-			"kr.gooroom.agent",
-			"/kr/gooroom/agent",
-			"kr.gooroom.agent",
+			"kr.hamonikr.agent",
+			"/kr/hamonikr/agent",
+			"kr.hamonikr.agent",
 			NULL,
 			&error);
 

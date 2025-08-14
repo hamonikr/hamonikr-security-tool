@@ -1,7 +1,7 @@
 libcommon_la_CPPFLAGS = \
 	-I$(top_srcdir)/common \
-	-DGOOROOM_LOGPARSER_SEEKTIME_HELPER=\"/usr/lib/gooroom-security-utils/gooroom-logparser-seektime-helper\" \
-	-DGOOROOM_SECURITY_LOGPARSER_WRAPPER=\"/usr/lib/gooroom-security-utils/gooroom-security-logparser-wrapper\" \
+	-DHAMONIKR_LOGPARSER_SEEKTIME_HELPER=\"/usr/lib/hamonikr-security-utils/hamonikr-logparser-seektime-helper\" \
+	-DHAMONIKR_SECURITY_LOGPARSER_WRAPPER=\"/usr/lib/hamonikr-security-utils/hamonikr-security-logparser-wrapper\" \
 	$(AM_CPPFLAGS)
 
 noinst_LTLIBRARIES = libcommon.la
@@ -24,10 +24,10 @@ libcommon_la_LIBADD = \
 	$(POLKIT_LIBS)	\
 	$(JSON_C_LIBS)
 
-pkglibexec_PROGRAMS = gooroom-systemd-control-helper
+pkglibexec_PROGRAMS = hamonikr-systemd-control-helper
 
-gooroom_systemd_control_helper_SOURCES = gooroom-systemd-control-helper.c
-gooroom_systemd_control_helper_CFLAGS = $(GIO_CFLAGS)
-gooroom_systemd_control_helper_LDFLAGS = $(GIO_LIBS)
+hamonikr_systemd_control_helper_SOURCES = hamonikr-systemd-control-helper.c
+hamonikr_systemd_control_helper_CFLAGS = $(GIO_CFLAGS)
+hamonikr_systemd_control_helper_LDFLAGS = $(GIO_LIBS)
 
 DISTCLEANFILES = Makefile.in

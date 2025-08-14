@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="gooroom-security-status-tool">
+<schemalist gettext-domain="hamonikr-security-tool">
 
-  <schema id="apps.gooroom-security-status-tool" path="/apps/gooroom-security-status-tool/">
+  <schema id="apps.hamonikr-security-tool" path="/apps/hamonikr-security-tool/">
 
     <key name="log-filter" type="u">
       <default>255</default>

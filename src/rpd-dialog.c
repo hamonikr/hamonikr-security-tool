@@ -345,7 +345,7 @@ rpd_dialog_class_init (RPDDialogClass *class)
 	object_class->get_property = rpd_dialog_get_property;
 
 	gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (class),
-			"/kr/gooroom/security/status/sysinfo/rpd-dialog.ui");
+			"/kr/hamonikr/security/status/sysinfo/rpd-dialog.ui");
 
 	gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (class), RPDDialog, scl_resource);
 	gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (class), RPDDialog, trv_resource);

@@ -1,0 +1,10 @@
+[Desktop Entry]
+_Name=HamoniKR Security Tool
+Icon=preferences-system-firewall
+Exec=hamonikr-security-tool
+_Comment=Check the security status of the HamoniKR platform.
+Terminal=false
+Type=Application
+StartupNotify=true
+StartUpWMClass=hamonikr-security-tool
+Categories=System;Security;GTK;

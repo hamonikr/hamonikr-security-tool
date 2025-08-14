@@ -1,7 +1,7 @@
-gsettings_SCHEMAS = apps.gooroom-security-status-tool.gschema.xml
+gsettings_SCHEMAS = apps.hamonikr-security-tool.gschema.xml
 @GSETTINGS_RULES@
 
-gooroom_security_status_tool_CPPFLAGS = \
+hamonikr_security_tool_CPPFLAGS = \
 	-I$(top_srcdir)/common/	\
 	-DLOCALEDIR=\"$(localedir)\"	\
 	-DGOOROOM_UPDATE_CHECKER=\"$(pkglibexecdir)/gooroom-update-checker\" \
@@ -16,13 +16,13 @@ gooroom_security_status_tool_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 
-bin_PROGRAMS = gooroom-security-status-tool
+bin_PROGRAMS = hamonikr-security-tool
 
 BUILT_SOURCES = \
 	sysinfo-resources.c \
 	sysinfo-resources.h
 
-gooroom_security_status_tool_SOURCES = \
+hamonikr_security_tool_SOURCES = \
 	$(BUILT_SOURCES)	\
 	main.c				\
 	sysinfo-window.h	\
@@ -34,7 +34,7 @@ gooroom_security_status_tool_SOURCES = \
 	logfilter-popover.h	\
 	logfilter-popover.c
 
-gooroom_security_status_tool_CFLAGS =  \
+hamonikr_security_tool_CFLAGS =  \
 	$(GLIB_CFLAGS)      \
 	$(GTK3_CFLAGS)       \
 	$(JSON_C_CFLAGS)    \
@@ -42,10 +42,10 @@ gooroom_security_status_tool_CFLAGS =  \
 	$(DBUS_GLIB_CFLAGS) \
 	$(AM_CFLAGS)
 
-gooroom_security_status_tool_LDFLAGS = \
+hamonikr_security_tool_LDFLAGS = \
 	$(AM_LDFLAGS)
 
-gooroom_security_status_tool_LDADD =   \
+hamonikr_security_tool_LDADD =   \
 	$(GLIB_LIBS)	\
 	$(GTK3_LIBS)	\
 	$(JSON_C_LIBS)	\
@@ -61,7 +61,7 @@ sysinfo-resources.h: gresource.xml $(resource_files)
 
 @INTLTOOL_DESKTOP_RULE@
 desktopdir = $(datadir)/applications
-desktop_in_files = gooroom-security-status-tool.desktop.in
+desktop_in_files = hamonikr-security-tool.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 CLEANFILES = $(desktop_DATA) $(BUILT_SOURCES)

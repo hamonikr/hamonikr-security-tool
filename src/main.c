@@ -50,7 +50,7 @@ main (int argc, char **argv)
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	app = gtk_application_new ("kr.gooroom.security.status.view", G_APPLICATION_DEFAULT_FLAGS);
+	app = gtk_application_new ("kr.hamonikr.security.tool", G_APPLICATION_DEFAULT_FLAGS);
 
 	g_signal_connect (app, "activate", G_CALLBACK (on_app_activate_cb), NULL);
 	g_signal_connect (app, "startup", G_CALLBACK (on_app_startup_cb), NULL);

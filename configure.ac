@@ -1,7 +1,7 @@
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_INIT([gooroom-security-status-tools], [0.1.0])
+AC_INIT([hamonikr-security-tool], [1.0.0])
 AC_PREREQ(2.63)
 
 dnl ***********************
@@ -48,7 +48,7 @@ AC_CHECK_HEADERS([stdlib.h string.h errno.h unistd.h])
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-GETTEXT_PACKAGE=gooroom-security-status-tools
+GETTEXT_PACKAGE=hamonikr-security-tool
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext Package])
 AM_GLIB_GNU_GETTEXT

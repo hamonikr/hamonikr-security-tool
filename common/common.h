@@ -30,10 +30,10 @@
 G_BEGIN_DECLS
 
 #define GOOROOM_SECURITY_LOGPARSER_SEEKTIME    "/var/tmp/GOOROOM-SECURITY-LOGPARSER-SEEKTIME"
-#define GOOROOM_MANAGEMENT_SERVER_CONF         "/etc/gooroom/gooroom-client-server-register/gcsr.conf"
-#define GOOROOM_AGENT_SERVICE_NAME             "gooroom-agent.service"
-#define GOOROOM_BROWSER_TRUST				   "/usr/share/gooroom/browser/policies/trust/managed/ui-policy.json"
-#define GOOROOM_BROWSER_UNTRUST				   "/usr/share/gooroom/browser/policies/untrust/managed/ui-policy.json"
+#define HAMONIKR_MANAGEMENT_SERVER_CONF         "/etc/hamonikr/hamonikr-client-server-register/gcsr.conf"
+#define HAMONIKR_AGENT_SERVICE_NAME             "hamonikr-agent.service"
+#define HAMONIKR_BROWSER_TRUST				   "/usr/share/hamonikr/browser/policies/trust/managed/ui-policy.json"
+#define HAMONIKR_BROWSER_UNTRUST			   "/usr/share/hamonikr/browser/policies/untrust/managed/ui-policy.json"
 
 #define	DEFAULT_YEAR                            1970 
 #define	DEFAULT_MONTH                           1

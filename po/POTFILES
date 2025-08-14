@@ -1,0 +1,11 @@
+	../common/common.c \
+	../src/main.c \
+	../src/sysinfo-window.c \
+	../src/rpd-dialog.c \
+	../src/calendar-popover.c \
+	../src/logfilter-popover.c \
+	../src/gooroom-security-status-tool.desktop.in \
+	../data/kr.gooroom.security.status.tools.policy.in.in \
+	../[type: gettext/glade]src/sysinfo-window.ui \
+	../[type: gettext/glade]src/rpd-dialog.ui \
+	../[type: gettext/glade]src/logfilter-popover.ui

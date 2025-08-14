@@ -84,7 +84,7 @@ static void
 logfilter_popover_class_init (LogfilterPopoverClass *class)
 {
 	gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (class),
-			"/kr/gooroom/security/status/sysinfo/logfilter-popover.ui");
+			"/kr/hamonikr/security/status/sysinfo/logfilter-popover.ui");
 
 	gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (class), LogfilterPopover, chk_log_debug);
 	gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (class), LogfilterPopover, chk_log_info);

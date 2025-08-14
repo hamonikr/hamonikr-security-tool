@@ -1,0 +1,13 @@
+[HamoniKR Security Status Vulnerable Helper]
+Identity=unix-group:sudo;unix-group:gpms
+Action=kr.hamonikr.security.tools.security-status-vulnerable-helper;
+ResultActive=yes
+ResultInactive=no
+ResultAny=no
+
+[HamoniKR Iptables Wrapper]
+Identity=unix-group:sudo;unix-group:gpms
+Action=kr.hamonikr.security.tools.iptables-wrapper;kr.hamonikr.security.tools.ip6tables-wrapper;
+ResultActive=yes
+ResultInactive=no
+ResultAny=no

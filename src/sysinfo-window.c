@@ -604,7 +604,7 @@ get_password_max_days_for_online_user (void)
 	if (!homedir)
 		homedir = g_get_home_dir ();
 
-	file = g_strdup_printf ("%s/.gooroom/%s", homedir, GRM_USER);
+	file = g_strdup_printf ("%s/.hamonikr/%s", homedir, GRM_USER);
 
 	if (!g_file_test (file, G_FILE_TEST_EXISTS)) {
 		g_error ("No such file or directory : %s", file);
@@ -901,7 +901,7 @@ launch_client_server_register_async (SysinfoWindow *window)
 	SysinfoWindowPrivate *priv = window->priv;
 
 	pkexec = g_find_program_in_path ("pkexec");
-	cmd = g_find_program_in_path ("gooroom-client-server-register");
+	cmd = g_find_program_in_path ("hamonikr-client-server-register");
 
 	if (!cmd) {
 		GtkWidget *message;
@@ -913,7 +913,7 @@ launch_client_server_register_async (SysinfoWindow *window)
 				_("Program is not installed"));
 
 		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message),
-				_("Please install the gooroom-client-server-register."));
+				_("Please install the hamonikr-client-server-register."));
 
 		gtk_dialog_run (GTK_DIALOG (message));
 		gtk_widget_destroy (message);
@@ -955,7 +955,7 @@ open_help (GtkAccelGroup *accel, GObject *acceleratable,
            guint keyval, GdkModifierType modifier,
            gpointer user_data)
 {
-    gtk_show_uri_on_window (GTK_WINDOW(user_data), "help:gooroom-security-status-tool",
+    gtk_show_uri_on_window (GTK_WINDOW(user_data), "help:hamonikr-security-tool",
                             gtk_get_current_event_time(), NULL);
 }
 
@@ -1072,9 +1072,9 @@ agent_connection_status_check (gpointer data)
 	g_dbus_proxy_new_for_bus (G_BUS_TYPE_SYSTEM,
                               G_DBUS_CALL_FLAGS_NONE,
                               NULL,
-                              "kr.gooroom.agent",
-                              "/kr/gooroom/agent",
-                              "kr.gooroom.agent",
+                              "kr.hamonikr.agent",
+                              "/kr/hamonikr/agent",
+                              "kr.hamonikr.agent",
                               NULL,
                               got_agent_proxy_cb,
                               data);
@@ -1083,9 +1083,9 @@ agent_connection_status_check (gpointer data)
 //	proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
 //			G_DBUS_CALL_FLAGS_NONE,
 //			NULL,
-//			"kr.gooroom.agent",
-//			"/kr/gooroom/agent",
-//			"kr.gooroom.agent",
+//			"kr.hamonikr.agent",
+//			"/kr/hamonikr/agent",
+//			"kr.hamonikr.agent",
 //			NULL,
 //			NULL);
 //
@@ -1303,9 +1303,9 @@ check_function_from_agent (SysinfoWindow *window, const gchar *task_name)
 	proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
 			G_DBUS_CALL_FLAGS_NONE,
 			NULL,
-			"kr.gooroom.agent",
-			"/kr/gooroom/agent",
-			"kr.gooroom.agent",
+			"kr.hamonikr.agent",
+			"/kr/hamonikr/agent",
+			"kr.hamonikr.agent",
 			NULL,
 			NULL);
 
@@ -1809,10 +1809,10 @@ system_security_status_update (SysinfoWindow *window)
 
 	if (priv->security_status == SECURITY_STATUS_SAFETY) {
 		markup = g_markup_printf_escaped ("<b><i><span foreground=\"#5ea80d\">%s</span></i></b>", _("Safety"));
-		gtk_image_set_from_resource (GTK_IMAGE(priv->img_security_status), "/kr/gooroom/security/status/settings/ic-security-safe");
+		gtk_image_set_from_resource (GTK_IMAGE(priv->img_security_status), "/kr/hamonikr/security/status/settings/ic-security-safe");
 	} else if (priv->security_status == SECURITY_STATUS_VULNERABLE) {
 		markup = g_markup_printf_escaped ("<b><i><span foreground=\"#dc322f\">%s</span></i></b>", _("Vulnerable"));
-		gtk_image_set_from_resource (GTK_IMAGE(priv->img_security_status), "/kr/gooroom/security/status/settings/ic-security-danger");
+		gtk_image_set_from_resource (GTK_IMAGE(priv->img_security_status), "/kr/hamonikr/security/status/settings/ic-security-danger");
 		sensitive = TRUE;
 	} else {
 		markup = g_markup_printf_escaped ("<b><i>%s</i></b>", _("Unknown"));
@@ -2032,7 +2032,7 @@ system_basic_info_update (SysinfoWindow *window)
 	{
 		gchar *os_info = NULL;
 		gchar *contents = NULL;
-		g_file_get_contents ("/etc/gooroom/info", &contents, NULL, NULL);
+		g_file_get_contents ("/etc/hamonikr/info", &contents, NULL, NULL);
 		if (contents) {
 			guint i = 0;
 			gchar **lines = g_strsplit (contents, "\n", -1);
@@ -2513,7 +2513,7 @@ system_browser_policy_update (SysinfoWindow *window)
 	else
 		gooroom_browser_status_update (GTK_WIDGET(priv->rdo_untrusted), window);
 
-	file = g_strdup_printf ("/usr/share/gooroom/browser/policies/mainpref.json");
+	file = g_strdup_printf ("/usr/share/hamonikr/browser/policies/mainpref.json");
 
 	if (!g_file_test (file, G_FILE_TEST_EXISTS)) {
 		goto error;
@@ -2895,7 +2895,7 @@ system_push_update_allow_or_deny (gpointer data)
 
 	gboolean active = gtk_switch_get_active (GTK_SWITCH (priv->swt_push_update));
 
-	if (!authenticate ("kr.gooroom.security.status.tools.set-push-update")) {
+	if (!authenticate ("kr.hamonikr.security.tools.set-push-update")) {
 		g_signal_handlers_block_by_func (priv->swt_push_update, on_push_update_changed, window);
 		gtk_switch_set_active (GTK_SWITCH (priv->swt_push_update), !active);
 		g_signal_handlers_unblock_by_func (priv->swt_push_update, on_push_update_changed, window);
@@ -2931,9 +2931,9 @@ system_push_update_allow_or_deny (gpointer data)
 		proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
 				G_DBUS_CALL_FLAGS_NONE,
 				NULL,
-				"kr.gooroom.agent",
-				"/kr/gooroom/agent",
-				"kr.gooroom.agent",
+				"kr.hamonikr.agent",
+				"/kr/hamonikr/agent",
+				"kr.hamonikr.agent",
 				NULL,
 				NULL);
 
@@ -3495,7 +3495,7 @@ sysinfo_window_init (SysinfoWindow *self)
 
     /* for settings */
 	schema = g_settings_schema_source_lookup (g_settings_schema_source_get_default (),
-                                              "apps.gooroom-security-status", TRUE);
+                                              "apps.hamonikr-security-status", TRUE);
 	if (schema) {
 		priv->gkm_settings = g_settings_new_full (schema, NULL, NULL);
 		g_settings_schema_unref (schema);
@@ -3525,7 +3525,7 @@ sysinfo_window_init (SysinfoWindow *self)
 	g_signal_connect (priv->sidebar_selection, "changed", G_CALLBACK (selection_cb), self);
 
 	schema = g_settings_schema_source_lookup (g_settings_schema_source_get_default (),
-                                              "apps.gooroom-security-status-tool", TRUE);
+                                              "apps.hamonikr-security-tool", TRUE);
 	if (schema) {
 		priv->settings = g_settings_new_full (schema, NULL, NULL);
 		g_settings_schema_unref (schema);
@@ -3623,7 +3623,7 @@ sysinfo_window_init (SysinfoWindow *self)
 	g_timeout_add (500, (GSourceFunc) update_ui, self);
 
 	provider = gtk_css_provider_new ();
-	gtk_css_provider_load_from_resource (provider, "/kr/gooroom/security/status/settings/style.css");
+	gtk_css_provider_load_from_resource (provider, "/kr/hamonikr/security/status/settings/style.css");
 	gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
 											   GTK_STYLE_PROVIDER (provider),
 											   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -3667,7 +3667,7 @@ sysinfo_window_class_init (SysinfoWindowClass *class)
 	object_class->finalize = sysinfo_window_finalize;
 
 	gtk_widget_class_set_template_from_resource (widget_class,
-			"/kr/gooroom/security/status/sysinfo/sysinfo-window.ui");
+			"/kr/hamonikr/security/status/sysinfo/sysinfo-window.ui");
 
 	gtk_widget_class_bind_template_child_private (widget_class, SysinfoWindow, lbl_title);
 	gtk_widget_class_bind_template_child_private (widget_class, SysinfoWindow, sidebar_selection);
